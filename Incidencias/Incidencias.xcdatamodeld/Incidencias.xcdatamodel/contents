@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Accion" representedClassName="Accion" syncable="YES">
+        <attribute name="activo" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ccve" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ccveEmergencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaCreacion" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="icve" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="icveEmergencia" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tipoVehiculo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transito" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="imagenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Imagen" syncable="YES"/>
+        <relationship name="reporte" maxCount="1" deletionRule="Nullify" destinationEntity="Reporte" inverseName="acciones" inverseEntity="Reporte" syncable="YES"/>
+    </entity>
+    <entity name="Carretera" representedClassName=".Carretera" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entidadFederativa" maxCount="1" deletionRule="Nullify" destinationEntity="EntidadFederativa" inverseName="carreteras" inverseEntity="EntidadFederativa" syncable="YES"/>
+        <relationship name="tramos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tramo" inverseName="carretera" inverseEntity="Tramo" syncable="YES"/>
+    </entity>
+    <entity name="CategoriaEmergencia" representedClassName=".CategoriaEmergencia" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tipoEmergencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoEmergencia" inverseName="categoriaEmergencias" inverseEntity="TipoEmergencia" syncable="YES"/>
+    </entity>
+    <entity name="CausaEmergencia" representedClassName=".CausaEmergencia" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tipoEmergencias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TipoEmergencia" inverseName="causaEmergencia" inverseEntity="TipoEmergencia" syncable="YES"/>
+    </entity>
+    <entity name="Concepto" representedClassName="Concepto" syncable="YES">
+        <attribute name="cantidad" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ccve" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ccveEmergencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaCreacion" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="icve" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="icveEmergencia" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="icveUnidad" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="iporAvance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="imagenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Imagen" syncable="YES"/>
+        <relationship name="reporte" maxCount="1" deletionRule="Nullify" destinationEntity="Reporte" inverseName="conceptos" inverseEntity="Reporte" syncable="YES"/>
+    </entity>
+    <entity name="Dano" representedClassName=".Dano" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="EntidadFederativa" representedClassName=".EntidadFederativa" syncable="YES">
+        <attribute name="clave" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="carreteras" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Carretera" inverseName="entidadFederativa" inverseEntity="Carretera" syncable="YES"/>
+    </entity>
+    <entity name="Imagen" representedClassName=".Imagen" syncable="YES">
+        <attribute name="file" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="hasBeenFetch" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Reporte" representedClassName=".Reporte" syncable="YES">
+        <attribute name="accionesRealizadas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="altitud" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaCreacion" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaDefinitiva" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaProvisional" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hasBeedModified" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="kmFinal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="kmInicial" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="reporteId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rutaAlterna" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tipoVehiculo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="acciones" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Accion" inverseName="reporte" inverseEntity="Accion" syncable="YES"/>
+        <relationship name="carretera" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Carretera" syncable="YES"/>
+        <relationship name="categoriaEmergencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoriaEmergencia" syncable="YES"/>
+        <relationship name="causaEmergencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CausaEmergencia" syncable="YES"/>
+        <relationship name="conceptos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Concepto" inverseName="reporte" inverseEntity="Concepto" syncable="YES"/>
+        <relationship name="dano" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dano" syncable="YES"/>
+        <relationship name="entidadFederativa" maxCount="1" deletionRule="Nullify" destinationEntity="EntidadFederativa" syncable="YES"/>
+        <relationship name="imagenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Imagen" syncable="YES"/>
+        <relationship name="subtramo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subtramo" syncable="YES"/>
+        <relationship name="tipoEmergencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoEmergencia" syncable="YES"/>
+        <relationship name="tramo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tramo" syncable="YES"/>
+        <relationship name="transitabilidad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transitabilidad" syncable="YES"/>
+    </entity>
+    <entity name="Subtramo" representedClassName=".Subtramo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="kmFinal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="kmInicial" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tramo" maxCount="1" deletionRule="Nullify" destinationEntity="Tramo" inverseName="subtramos" inverseEntity="Tramo" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="TipoEmergencia" representedClassName=".TipoEmergencia" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoriaEmergencias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CategoriaEmergencia" inverseName="tipoEmergencia" inverseEntity="CategoriaEmergencia" syncable="YES"/>
+        <relationship name="causaEmergencia" maxCount="1" deletionRule="Nullify" destinationEntity="CausaEmergencia" inverseName="tipoEmergencias" inverseEntity="CausaEmergencia" syncable="YES"/>
+    </entity>
+    <entity name="Tramo" representedClassName=".Tramo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="carretera" maxCount="1" deletionRule="Nullify" destinationEntity="Carretera" inverseName="tramos" inverseEntity="Carretera" syncable="YES"/>
+        <relationship name="subtramos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subtramo" inverseName="tramo" inverseEntity="Subtramo" syncable="YES"/>
+    </entity>
+    <entity name="Transitabilidad" representedClassName=".Transitabilidad" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Accion" positionX="-83" positionY="-307" width="128" height="225"/>
+        <element name="Carretera" positionX="-81" positionY="-778" width="128" height="103"/>
+        <element name="CategoriaEmergencia" positionX="279" positionY="-772" width="128" height="88"/>
+        <element name="CausaEmergencia" positionX="387" positionY="-477" width="128" height="88"/>
+        <element name="Concepto" positionX="279" positionY="-297" width="128" height="223"/>
+        <element name="Dano" positionX="187" positionY="-865" width="128" height="73"/>
+        <element name="EntidadFederativa" positionX="-11" positionY="-972" width="128" height="103"/>
+        <element name="Imagen" positionX="106" positionY="-324" width="128" height="120"/>
+        <element name="Reporte" positionX="90" positionY="-765" width="128" height="435"/>
+        <element name="Subtramo" positionX="-171" positionY="-495" width="128" height="118"/>
+        <element name="TipoEmergencia" positionX="342" positionY="-634" width="128" height="103"/>
+        <element name="Tramo" positionX="-128" positionY="-630" width="128" height="103"/>
+        <element name="Transitabilidad" positionX="520" positionY="-378" width="128" height="73"/>
+    </elements>
+</model>

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "53AA101C9FAD900ABDFF90A32C9CDB4380028A90",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D63C3621CBFC87C100C6CF584BC41156ADE18B50" : 0,
+    "53AA101C9FAD900ABDFF90A32C9CDB4380028A90" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "22F43631-6D4E-4F44-A6ED-964C0DE7199F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D63C3621CBFC87C100C6CF584BC41156ADE18B50" : "",
+    "53AA101C9FAD900ABDFF90A32C9CDB4380028A90" : "Incidencias\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Incidencias",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Incidencias.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Mentalex\/Incidencias.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "53AA101C9FAD900ABDFF90A32C9CDB4380028A90"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cesar8803\/PicieApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D63C3621CBFC87C100C6CF584BC41156ADE18B50"
+    }
+  ]
+}

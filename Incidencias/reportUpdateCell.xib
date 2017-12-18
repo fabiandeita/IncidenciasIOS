@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateCell" id="KGk-i7-Jjw" customClass="reportUpdateCell" customModule="Incidencias" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WD-OY-Cun">
+                        <rect key="frame" x="9" y="6" width="223" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="223" id="ni2-RD-4L7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-sk-zNl">
+                        <rect key="frame" x="9" y="22" width="184" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="184" id="6fY-Xb-KPe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aX-iq-HuS">
+                        <rect key="frame" x="270" y="6" width="30" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.99034621879184959" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ie7-Bb-rMo"/>
+                            <constraint firstAttribute="width" constant="30" id="bsG-ej-WtW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="xVl-sk-zNl" secondAttribute="bottom" constant="-1.5" id="1NZ-Wo-cbG"/>
+                    <constraint firstItem="5aX-iq-HuS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-12" id="8kk-eq-sMB"/>
+                    <constraint firstItem="xVl-sk-zNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="Alh-0p-Zj2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1WD-OY-Cun" secondAttribute="bottom" constant="12.5" id="EEP-Rh-fyn"/>
+                    <constraint firstItem="1WD-OY-Cun" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-2" id="MU4-2q-Z7G"/>
+                    <constraint firstItem="5aX-iq-HuS" firstAttribute="leading" secondItem="1WD-OY-Cun" secondAttribute="trailing" constant="38" id="bhf-xY-Uyl"/>
+                    <constraint firstItem="1WD-OY-Cun" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="kal-HT-ZIi"/>
+                    <constraint firstItem="1WD-OY-Cun" firstAttribute="top" secondItem="5aX-iq-HuS" secondAttribute="top" id="nhA-6M-vV8"/>
+                    <constraint firstItem="1WD-OY-Cun" firstAttribute="leading" secondItem="xVl-sk-zNl" secondAttribute="leading" id="ohc-DD-De1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descripcionCell" destination="1WD-OY-Cun" id="N7p-ne-No8"/>
+                <outlet property="idCell" destination="xVl-sk-zNl" id="1xw-5Z-BuS"/>
+                <outlet property="statusImage" destination="5aX-iq-HuS" id="Nth-gp-RC9"/>
+            </connections>
+            <point key="canvasLocation" x="280" y="174"/>
+        </tableViewCell>
+    </objects>
+</document>
